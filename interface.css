@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+#chat-container {
+    max-width: 600px;
+    margin: 15px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+h2 {
+    margin: 0 0 15px;
+    font-size: 24px;
+	font-weight: bold;
+    color: #333;
+}
+
+h3 {
+    margin: 15px 0 5px;
+    font-size: 18px;
+	font-weight: bold;
+    color: #444;
+}
+
+.side-label{
+	margin-left: 10px;
+}
+
+/*Override bootstrap*/
+.card{
+	margin-bottom: 7px !important;
+}
+
+/*Log*/
+
+table.logTable, table.logTable th, table.logTable td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}

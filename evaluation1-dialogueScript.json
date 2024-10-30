@@ -1,0 +1,141 @@
+{
+    "dialogueScripts": [
+
+		{
+			"topic": "t0",
+			"text": "Grand children",
+			"script": [
+				{
+					"question": "q0",
+					"text": "What activities do you enjoy with your grand children?",
+					"answerType": "checkbox",
+					"answers": [
+						{
+							"belief": "b0",
+							"text": "Health"
+						}, {
+							"belief": "b1",
+							"text": "Sports"
+						}, {
+							"belief": "b2",
+							"text": "Family"
+						}, {
+							"belief": "b3",
+							"text": "Loneliness"
+						}, {
+							"belief": "bn0",
+							"text": "I do not want to talk about Loneliness"
+						}						
+					]
+				}
+			]
+		},
+		{
+			"topic": "t1",
+			"text": "Health",
+			"script": [
+				{
+					"question": "q10",
+					"text": "What health aspects do you prioritize?",
+					"answerType": "checkbox",
+					"answers": [
+						{
+							"belief": "b4",
+							"text": "Grand children"
+						}, {
+							"belief": "b5",
+							"text": "Sports"
+						}, {
+							"belief": "b6",
+							"text": "Family"
+						}, {
+							"belief": "b7",
+							"text": "Loneliness"
+						}, {
+							"belief": "bn1",
+							"text": "I do not want to talk about Loneliness"
+						}										
+					]
+				}
+			]
+		},	
+		{
+			"topic": "t2",
+			"text": "Sports",
+			"script": [
+				{
+					"question": "q2",
+					"text": "What sport activities do you like?",
+					"answerType": "checkbox",
+					"answers": [
+						{
+							"belief": "b8",
+							"text": "Grand children"
+						}, {
+							"belief": "b9",
+							"text": "Health"
+						}, {
+							"belief": "b10",
+							"text": "Family"
+						}, {
+							"belief": "b11",
+							"text": "Loneliness"
+						}, {
+							"belief": "bn2",
+							"text": "I do not want to talk about Loneliness"
+						}					
+					]
+				}
+			]
+		},
+		{
+			"topic": "t3",
+			"text": "Family",
+			"script": [
+				{
+					"question": "q3",
+					"text": "Tell me about about Family",
+				"answerType": "checkbox",
+					"answers": [
+						{
+							"belief": "b12",
+							"text": "Grand children"
+						}, {
+							"belief": "b13",
+							"text": "Health"
+						}, {
+							"belief": "b14",
+							"text": "Sports"
+						}, {
+							"belief": "b15",
+							"text": "Loneliness"
+						}, {
+							"belief": "bn3",
+							"text": "I do not want to talk about Loneliness"
+						}					
+					]
+				}
+			]
+		},
+		{
+			"topic": "t4",
+			"text": "Loneliness",
+			"script": [
+				{
+					"question": "q4",
+					"text": "Do you feel lonely?",
+					"answerType": "checkbox",
+					"answers": [
+						{
+							"belief": "b16",
+							"text": "Feelings of isolation"
+						}, {
+							"belief": "bn4",
+							"text": "I do not want to talk about Loneliness"
+						}	
+					]
+				}
+			]
+		}
+	]
+}
