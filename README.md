@@ -8,7 +8,7 @@ Clone the repository and ensure PHP is installed in your environment.
 ```bash
 git clone https://github.com/AndreasbCS/goal-hiding-dialogues-framework.git
 cd goal-hiding-dialogues-framework
-
+```
 
 ## Files
 
