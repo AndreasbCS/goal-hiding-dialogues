@@ -19,3 +19,5 @@ cd goal-hiding-dialogues-framework
 - `evaluation1-dialogueScript.json`: Specifies a particular dialogue script with topics and belief mappings for dialogue sequences.
 - `evaluation1-QBAF.json`: Specifies a particular QBAF structure.
 - `DialogueProcess.php`: Initialization file for the experiment.
+
+![UML](figures/UML-Goal-hiding-implementation.pdf)
