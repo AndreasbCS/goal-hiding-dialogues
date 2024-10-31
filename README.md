@@ -20,4 +20,82 @@ cd goal-hiding-dialogues-framework
 - `evaluation1-QBAF.json`: Specifies a particular QBAF structure.
 - `DialogueProcess.php`: Initialization file for the experiment.
 
-![UML](https://raw.githubusercontent.com/AndreasbCS/goal-hiding-dialogues-framework/master/figures/UML-Goal-hiding-implementation.pdf)
+# Initialization 
+
+`DialogueProcess.php` initializes the dialogue reasoning process, using predefined parameters and JSON-encoded knowledge bases. It processes an input dialogue history to track changes in beliefs and topics and outputs QBAFs for each dialogue state.
+
+### Parameters to Set
+
+- **Discount Factor (`$discount`)**: Determines the decay rate of influence for each belief and topic relation. Example:
+  ```php
+  $discount = 0.2;
+  ```
+- **Sensitivity Interval (`$sensitivityInterval`)**: Sets a range for topic strength within which topics are considered valid to discuss. Use the default:
+  ```php
+  $sensitivityInterval = array(
+      'lowerBound' => 0.5, 
+      'upperBound' => 0.7
+  );
+  ```
+
+### Input
+
+- **Dialogue History (`$input`)**: A string representing the dialogue sequence, where topics (e.g., `t0`, `t1`) and beliefs (e.g., `b1`, `b4`) alternate as the dialogue progresses. An example:
+  ```php
+  $input = "t0, b1, t1, b4, t2, b8, t3, b12, t4";
+  ```
+  This input is processed to create an array of dialogue moves, where:
+    - Each **topic** (e.g., `t0`) corresponds to an `open_topic` move by the `seeker`.
+    - Each **belief** (e.g., `b1`) corresponds to an `assert_belief` move by the `respondent`.
+
+### Breakdown of DialogueProcess.php
+
+1. **Load Knowledge Bases**: Load `evaluation1-dependencyGraph.json` and `evaluation1-QBAF.json` for initial dependency relations and QBAF states.
+2. **Initialize QBAFs**: The first QBAF state is generated from `evaluation1-QBAF.json`.
+3. **Convert Dialogue History**: Parse the input string to create a sequence of dialogue moves.
+4. **Process Dialogue**: Each move updates the dialogue state:
+   - **Open Topic (`tX`)**: The `seeker` initiates a new topic.
+   - **Assert Belief (`bX`)**: The `respondent` asserts beliefs.
+5. **QBAF States**: After each move, the `QbafManager` adds a new QBAF state, reflecting changes in strengths of topics over dialogue state transitions.
+6. **Log Output**: The dialogue log presents the QBAFs for each dialogue state, highlighting strengths of each topic changes and newly activated beliefs or topics.
+
+### Output
+
+- **QBAFs in Each Dialogue State**: After processing the dialogue history, each QBAF state is output in sequence, showing how beliefs and topic strengths change across dialogue states.
+- **Next Suggested Topic**: Based on the goal topic and current dialogue state, the framework suggests the next topic to open.
+- **Dialogue Log**: Logs the dialogue history and QBAF changes.
+
+### Example Initialization
+
+```php
+// Load JSON files
+$dependencyGraph_json = file_get_contents("evaluation1-dependencyGraph.json");
+$qbaf_json = file_get_contents("evaluation1-QBAF.json");
+
+// Initialize DependencyGraph, QBAF, and Managers
+$dependencyGraph = DependencyGraph::graphFromJson($dependencyGraph_json);
+$qbaf = Qbaf::qbafFromJson($qbaf_json);
+$dialogueLog = new DialogueLog();
+$qbafManager = new QbafManager([], $discount, $dialogueLog);
+$qbafManager->addQbaf($qbaf);
+
+$dialogueManager = new DialogueManager(
+    $topics = $dependencyGraph->getTopics(),
+    $beliefs = $dependencyGraph->getBeliefs(),
+    $qbafManager,
+    $dependencyGraph,
+    $discount,
+    $sensitivityInterval,
+    $dialogueLog
+);
+```
+
+### Authors
+
+* Andreas Brännström {andreasb@cs.umu.se} [Homepage](https://people.cs.umu.se/andreasb/)
+* Virginia Dignum {virginia@cs.umu.se} [Homepage](https://www.umu.se/en/staff/virginia-dignum/)
+* Juan Carlos Nieves {jcnieves@cs.umu.se} [Homepage](https://www.umu.se/en/staff/juan-carlos-nieves/)
+
+Department of Computing Science  
+Umeå university  
+SE-901 87, Umeå, Sweden  
