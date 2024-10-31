@@ -26,11 +26,11 @@ cd goal-hiding-dialogues-framework
 
 ### Parameters to Set
 
-- **Discount Factor (`$discount`)**: Determines the decay rate of influence for each belief and topic relation. Example:
+- **Discount Factor (`$discount`)**: Determines the decay rate of influence of topic strength. Default:
   ```php
   $discount = 0.2;
   ```
-- **Sensitivity Interval (`$sensitivityInterval`)**: Sets a range for topic strength within which topics are considered valid to discuss. Use the default:
+- **Sensitivity Interval (`$sensitivityInterval`)**: Sets a range for topic strength within which topics are considered valid to open. Default:
   ```php
   $sensitivityInterval = array(
       'lowerBound' => 0.5, 
