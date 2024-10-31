@@ -20,4 +20,4 @@ cd goal-hiding-dialogues-framework
 - `evaluation1-QBAF.json`: Specifies a particular QBAF structure.
 - `DialogueProcess.php`: Initialization file for the experiment.
 
-![UML](figures/UML-Goal-hiding-implementation.pdf)
+![UML](https://github.com/AndreasbCS/goal-hiding-dialogues-framework/blob/main/figures/UML-Goal-hiding-implementation.pdf)
