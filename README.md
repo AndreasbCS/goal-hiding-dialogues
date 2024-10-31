@@ -2,7 +2,7 @@
 
 Goal-hiding information-seeking dialogues model interactions where an agent seeks sensitive information by tactically postponing its true goal, opening related topics first to increase the other party’s willingness to discuss sensitive matters. Recognizing goal-hiding strategies is important in various scenarios; e.g., social engineering defense, to detect types of manipulation in online interactions. 
 
-This repository manages a PHP implementation of the formal framework of goal-hiding information-seeking dialogues. This code is used in the empirical evaluation presented in the paper *Goal-hiding Information-seeking Dialogues: A Formal Framework* (under review).
+This repository manages a PHP implementation of the formal framework of goal-hiding information-seeking dialogues. This code is used in the empirical evaluation presented in the paper *"Goal-hiding Information-seeking Dialogues: A Formal Framework"* (under review).
 
 ## Installation
 Clone the repository and ensure PHP is installed in your environment.
