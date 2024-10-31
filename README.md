@@ -69,6 +69,7 @@ cd goal-hiding-dialogues-framework
 // Load JSON files
 $dependencyGraph_json = file_get_contents("evaluation1-dependencyGraph.json");
 $qbaf_json = file_get_contents("evaluation1-QBAF.json");
+$dialogueScript_json = file_get_contents("evaluation1-dialogueScript.json");
 
 // Initialize DependencyGraph, QBAF, and Managers
 $dependencyGraph = DependencyGraph::graphFromJson($dependencyGraph_json);
@@ -86,6 +87,21 @@ $dialogueManager = new DialogueManager(
     $sensitivityInterval,
     $dialogueLog
 );
+
+...
+...
+
+$dialogueManager->processDialogue($dialogueHistory, $print);
+
+// Get dialogue after being processed. Beliefs from the input that does not belong to the knowledge base will be removed.
+$dialogueHistory = $dialogueManager->getDialogue();
+
+// Suggested next move
+$nextTopic = $dialogueManager->selectTopic($goalTopic);
+
+...
+...
+
 ```
 
 ### Authors
