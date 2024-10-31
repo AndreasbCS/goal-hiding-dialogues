@@ -60,9 +60,8 @@ cd goal-hiding-dialogues-framework
 
 ### Output
 
-- **QBAFs in Each Dialogue State**: After processing the dialogue history, each QBAF state is output in sequence, showing how beliefs and topic strengths change across dialogue states.
+- **QBAFs in Each Dialogue State**: After processing the dialogue history, each QBAF state is output in sequence, showing how topic strengths change across dialogue states.
 - **Next Suggested Topic**: Based on the goal topic and current dialogue state, the framework suggests the next topic to open.
-- **Dialogue Log**: Logs the dialogue history and QBAF changes.
 
 ### Example Initialization
 
