@@ -50,14 +50,13 @@ cd goal-hiding-dialogues-framework
 
 ### Breakdown of DialogueProcess.php
 
-1. **Load Knowledge Bases**: Load `evaluation1-dependencyGraph.json` and `evaluation1-QBAF.json` for initial dependency relations and QBAF states.
-2. **Initialize QBAFs**: The first QBAF state is generated from `evaluation1-QBAF.json`.
-3. **Convert Dialogue History**: Parse the input string to create a sequence of dialogue moves.
-4. **Process Dialogue**: Each move updates the dialogue state:
+1. **Load Knowledge Bases**: Load `evaluation1-dependencyGraph.json`, `evaluation1-QBAF.json`, and `evaluation1-dialogueScript.json`.
+2. **Convert Dialogue Input**: Parse the input string to create a sequence of dialogue moves.
+3. **Process Dialogue**: After each move, the `DialogueManager` updates the dialogue state:
    - **Open Topic (`tX`)**: The `seeker` initiates a new topic.
    - **Assert Belief (`bX`)**: The `respondent` asserts beliefs.
-5. **QBAF States**: After each move, the `QbafManager` adds a new QBAF state, reflecting changes in strengths of topics over dialogue state transitions.
-6. **Log Output**: The dialogue log presents the QBAFs for each dialogue state, highlighting strengths of each topic changes and newly activated beliefs or topics.
+4. **QBAF States**: In each dialogue state, the `QbafManager` adds a new QBAF state, reflecting changes in strengths of topics over dialogue state transitions.
+5. **Log Output**: The dialogue log presents the QBAFs for each dialogue state, highlighting strengths of each topic changes and newly activated beliefs, relations and topics.
 
 ### Output
 
