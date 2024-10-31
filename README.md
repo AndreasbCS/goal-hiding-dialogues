@@ -22,7 +22,7 @@ cd goal-hiding-dialogues-framework
 
 # Initialization 
 
-`DialogueProcess.php` initializes the dialogue reasoning process, using predefined parameters and JSON-encoded knowledge bases. It processes an input dialogue history to track changes in beliefs and topics and outputs QBAFs for each dialogue state.
+`DialogueProcess.php` initializes the dialogue reasoning process, using predefined parameters and JSON-encoded knowledge bases.
 
 ### Parameters to Set
 
