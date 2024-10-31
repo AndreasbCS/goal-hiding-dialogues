@@ -38,11 +38,11 @@ cd goal-hiding-dialogues-framework
   );
   ```
 - **Set up knowledge bases**
-```php
-$dependencyGraph_json = file_get_contents("evaluation1-dependencyGraph.json");
-$qbaf_json = file_get_contents("evaluation1-QBAF.json");
-$dialogueScript_json = file_get_contents("evaluation1-dialogueScript.json");
-```
+  ```php
+  $dependencyGraph_json = file_get_contents("evaluation1-dependencyGraph.json");
+  $qbaf_json = file_get_contents("evaluation1-QBAF.json");
+  $dialogueScript_json = file_get_contents("evaluation1-dialogueScript.json");
+  ```
 
 ### Input
 
